@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="checkout-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="offers.html"><i class="fas fa-gift"></i><span>Offers</span></a>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
+    <a href="checkout.html"><i class="fas fa-credit-card"></i><span>Checkout</span></a>
+    <a href="login.html" title="Login"><i class="fas fa-sign-in-alt"></i><span>Login</span></a>
+    <a href="signup.html" title="Sign Up"><i class="fas fa-user-plus"></i><span>Sign up</span></a>
+  </aside>
+
+  <!-- Header -->
+  <header class="checkout-header">
+    <h1>🖋 Checkout</h1>
+    <p class="subtitle">Fill in your payment details to complete the order.</p>
+  </header>
+
+  <!-- Main -->
+  <main class="checkout-container">
+    <!-- السعر الكلي -->
+    <div class="total-box">
+      <h2>Total Price: $120.00</h2>
+    </div>
+
+    <!-- فورم الدفع -->
+    <form class="payment-form" onsubmit="handlePayment(event)">
+      <h3>💳 Payment Details</h3>
+
+      <label for="name">Cardholder Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456" required>
+
+      <div class="form-row">
+        <div>
+          <label for="expiry">Expiry Date</label>
+          <input type="month" id="expiry" required>
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" maxlength="3" placeholder="123" required>
+        </div>
+      </div>
+
+      <label for="method">Payment Method</label>
+      <select id="method" required>
+        <option value="visa">Visa / MasterCard</option>
+        <option value="paypal">PayPal</option>
+        <option value="cash">Cash on Delivery</option>
+      </select>
+
+      <button type="submit" class="checkout-btn">Confirm Order</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="checkout-footer">
+    <p>📦 Your order will be on its way soon.</p>
+    <p>© 2025 Romysaa Bookstore. All rights reserved.</p>
+  </footer>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
